@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API test</title>
-</head>
-<body>
-<div id="myData"></div>
-<script>
+fetch('https://api.thecatapi.com/v1/images/search?limit=10').then(function (response) {
+	// The API call was successful!
+	return response.json();
+})
+.then(function (data) {
+	// This is the JSON from our response
+	console.log(data);
 
-</script>
-
-
-    <script src="data.js"></script>
-</html>
+})
+.catch(function (err) {
+	// There was an error
+	console.warn('Something went wrong.', err);
+});
